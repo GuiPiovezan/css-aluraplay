@@ -47,10 +47,41 @@
 
 .superior__secao__container {
     display: flex;
-    align-items: center; /* Alterar o eixo principal de elementos */
-    white-space: nowrap; 
+    align-items: center;
+    /* Alterar o eixo principal de elementos */
+    white-space: nowrap;
     overflow: scroll;
-    gap: 15px; /* aplica espaçamento entre items */
+    gap: 15px;
+    /* aplica espaçamento entre items */
+}
+
+/* VÍDEOS */
+
+.videos__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.videos__item {
+    height: 303px;
+    width: 280px;
+    flex-grow: 1; /* os elementos filhos se ajustam ao tamanho imposto ao elemento*/
+}
+
+/* DESAFIO VIDEO */
+
+.descricao-video {
+    margin-top: 1rem;
+    display: grid;
+    text-align: start;
+    column-gap: 1rem;
+    row-gap: 10px;
+    grid-template-columns: auto 1fr;
+}
+
+.descricao-video img {
+    grid-area: 1 / 1 / 3 / 2;
 }
 
 /* RODAPÉ */
@@ -59,10 +90,12 @@
     display: flex;
     /* flex-direction: column;
     flex-wrap: wrap; */
-    flex-flow: column wrap; /* Quebra de itens em linhas ou colunas */
+    flex-flow: column wrap;
+    /* Quebra de itens em linhas ou colunas */
 }
 
 @media (min-width: 834px) {
+
     /* CABEÇALHO */
     .cabecalho__pesquisar__item {
         display: block;
@@ -72,7 +105,7 @@
 
     .menu__container {
         left: 0;
-        height: auto;   
+        height: auto;
         width: 74px;
         top: 80px;
     }
@@ -83,10 +116,56 @@
         padding-top: 15px;
         gap: 33px;
     }
-    
+
     /* RODAPÉ */
     .rodape__container {
         justify-content: space-between;
     }
 }
 
+@media (min-width: 1440px) {
+
+    .menu__container {
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista {
+        height: auto;
+        padding: 20px 17px 20px 15px;
+        gap: 15px;
+    }
+
+    .menu__itens {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex;
+    }
+
+    .menu__lista:nth-child(3) {
+        flex-direction: column-reverse;
+    }
+
+    .jogos {
+        order: 3;
+    }
+
+    .filmes {
+        order: 2;
+    }
+
+    .premium {
+        order: 1;
+    }
+
+    .maispagina {
+        order: 4;
+    }
+
+}
